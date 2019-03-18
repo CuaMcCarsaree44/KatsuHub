@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainMenu"
+        android:background="@color/backgroundColors"
+>
+        <TextView
+                android:text="KATSU HUB"
+                android:textSize="52sp"
+                android:fontFamily="@font/neophobia"
+                android:textColor="#FFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_above="@id/searchTextbox"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="150dp"
+                android:textAlignment="center"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <EditText
+                android:id="@+id/searchTextbox"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/neophobia"
+                android:hint="@string/search_the_name"
+                android:textColorHint="#FFFFFF"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                tools:targetApi="lollipop"
+        />
+
+        <Button
+                android:id="@+id/disclaimerButton"
+                android:text="Disclaimer"
+                android:fontFamily="@font/neophobia"
+                android:textSize="16sp"
+                android:background="#DDDDDD"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="180dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/searchButton"
+        />
+        
+        <Button
+                android:id="@+id/searchButton"
+                android:text="Search"
+                android:fontFamily="@font/neophobia"
+                android:textSize="16sp"
+                android:background="#DDDDDD"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/searchTextbox"
+        />
+</RelativeLayout>
