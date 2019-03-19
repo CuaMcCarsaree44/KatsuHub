@@ -1,43 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-            name="datas"
-            type="com.cua.katsuhub.model.DataItem"
-        />
+                name="viewModel"
+                type="com.cua.katsuhub.viewmodel.CharacterViewModel"/>
     </data>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".view.SearchResult"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/backgroundColors"
 
->
-    <ImageView
-            android:id="@+id/faceImage"
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recylerView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            imageUrl="@{datas.attributes.image.original}"
-    />
-
-    <TextView
-            android:id="@+id/nameTextbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:text="@{datas.attributes.names.en}"
-            tools:text="Hohohihi"
-            android:textSize="36sp"
-            android:fontFamily="@font/neophobia"
-            android:textColor="#FFFFFF"
-            android:paddingBottom="16dp"
-    />
-
-
-
-
-</RelativeLayout>
+            android:layout_height="wrap_content"/>
 </layout>

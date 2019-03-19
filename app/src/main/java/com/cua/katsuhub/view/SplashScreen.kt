@@ -12,13 +12,10 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_screen)
 
-        var sleep:Handler = Handler()
-        sleep.postDelayed(object:Runnable{
-            override fun run() {
-                startActivity(Intent(this@SplashScreen, MainMenu::class.java))
-                this@SplashScreen.finish()
-            }
-
+        val sleep = Handler()
+        sleep.postDelayed({
+            startActivity(Intent(this@SplashScreen, MainMenu::class.java))
+            this@SplashScreen.finish()
         }, 2000)
     }
 }
