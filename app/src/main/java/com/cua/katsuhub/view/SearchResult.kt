@@ -1,6 +1,7 @@
 package com.cua.katsuhub.view
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -8,10 +9,9 @@ import androidx.databinding.DataBindingUtil
 import com.cua.katsuhub.R
 import com.cua.katsuhub.databinding.ActivitySearchResultBinding
 import com.cua.katsuhub.model.Data
+import com.cua.katsuhub.model.DataItem
 import com.cua.katsuhub.services.ApiServices
 import com.cua.katsuhub.services.Converter
-import com.cua.katsuhub.services.DUMMY
-import com.cua.katsuhub.viewmodel.CharacterViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,9 +46,9 @@ class SearchResult : AppCompatActivity() {
 
             override fun onResponse(call: Call<Data>, response: Response<Data>) {
                 val status:Boolean = response.isSuccessful
-                var feed = response?.body()
+                var feed = response.body()!!
                 if(status){
-                    bindData(feed!!)
+                    bindData(feed.data!!.get(0)!!)
                 }else
                 {
                 }
@@ -56,11 +56,19 @@ class SearchResult : AppCompatActivity() {
         })
     }
 
-    fun bindData(x:Data?)
+    fun bindData(x: DataItem)
     {
-        bind = DataBindingUtil.setContentView(this, R.layout.activity_search_result)
-        bind.apply {
-            data = x
+        if(x == null)
+        {
+            Toast.makeText(this@SearchResult, "No Data here", Toast.LENGTH_LONG).show()
+        }else {
+            bind = DataBindingUtil.setContentView(this, R.layout.activity_search_result)
+            bind.apply {
+                datas = x
+                bind.faceImage.setImageURI(Uri.parse(datas!!.attributes!!.image!!.original))
+            //bind.nameTextbox.text = data!!.attributes.names.en
+
+            }
         }
     }
 }

@@ -7,8 +7,8 @@
 >
     <data>
         <variable
-            name="data"
-            type="com.cua.katsuhub.model.Data"
+            name="datas"
+            type="com.cua.katsuhub.model.DataItem"
         />
     </data>
 <RelativeLayout
@@ -20,7 +20,7 @@
             android:id="@+id/faceImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@{data.attributes.image.original}"
+            android:src ="@{datas.attributes.image.original}"
     />
 
     <TextView
@@ -29,8 +29,15 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:text="@{data.attributes.names.en}"
+            android:text="@{datas.attributes.names.en}"
+            tools:text="Hohohihi"
+            android:textSize="36sp"
+            android:fontFamily="@font/neophobia"
+            android:textColor="#FFFFFF"
+            android:paddingBottom="16dp"
     />
+
+
 
 
 </RelativeLayout>

@@ -1,6 +1,12 @@
 package com.cua.katsuhub.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Image(
-    val meta: MetaX,
-    val original: String
+
+	@field:SerializedName("original")
+	val original: String? = null,
+
+	@field:SerializedName("meta")
+	val meta: Meta? = null
 )

@@ -1,5 +1,9 @@
 package com.cua.katsuhub.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Castings(
-    val links: LinksXX
+
+	@field:SerializedName("links")
+	val links: Links? = null
 )

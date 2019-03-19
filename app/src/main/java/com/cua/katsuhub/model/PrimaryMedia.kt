@@ -1,5 +1,9 @@
 package com.cua.katsuhub.model
 
+import com.google.gson.annotations.SerializedName
+
 data class PrimaryMedia(
-    val links: LinksX
+
+	@field:SerializedName("links")
+	val links: Links? = null
 )

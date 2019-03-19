@@ -1,9 +1,14 @@
 package com.cua.katsuhub.model
+import com.google.gson.annotations.SerializedName
 
 data class Data(
-    val attributes: Attributes,
-    val id: String,
-    val links: LinksX,
-    val relationships: Relationships,
-    val type: String
+
+	@field:SerializedName("data")
+	val data: List<DataItem?>? = null,
+
+	@field:SerializedName("meta")
+	val meta: Meta? = null,
+
+	@field:SerializedName("links")
+	val links: Links? = null
 )

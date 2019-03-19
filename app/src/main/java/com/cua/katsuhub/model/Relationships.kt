@@ -1,8 +1,18 @@
 package com.cua.katsuhub.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Relationships(
-    val castings: Castings,
-    val mediaCharacters: MediaCharacters,
-    val primaryMedia: PrimaryMedia,
-    val quotes: Quotes
+
+	@field:SerializedName("castings")
+	val castings: Castings? = null,
+
+	@field:SerializedName("primaryMedia")
+	val primaryMedia: PrimaryMedia? = null,
+
+	@field:SerializedName("mediaCharacters")
+	val mediaCharacters: MediaCharacters? = null,
+
+	@field:SerializedName("quotes")
+	val quotes: Quotes? = null
 )
