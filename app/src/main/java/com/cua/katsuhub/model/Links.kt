@@ -4,15 +4,15 @@ import com.google.gson.annotations.SerializedName
 
 data class Links(
 
-	@field:SerializedName("last")
-	val last: String? = null,
+	@SerializedName("last")
+	val last: String? = "",
 
-	@field:SerializedName("first")
-	val first: String? = null,
+	@SerializedName("first")
+	val first: String? = "",
 
-	@field:SerializedName("self")
-	val self: String? = null,
+	@SerializedName("self")
+	val self: String? = "",
 
-	@field:SerializedName("related")
-	val related: String? = null
+	@SerializedName("related")
+	val related: String? = ""
 )

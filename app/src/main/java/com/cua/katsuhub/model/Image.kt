@@ -4,9 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class Image(
 
-	@field:SerializedName("original")
-	val original: String? = null,
-
-	@field:SerializedName("meta")
-	val meta: Meta? = null
+	@SerializedName("original")
+	val original: String? = ""
 )

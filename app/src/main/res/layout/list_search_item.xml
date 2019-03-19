@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="character" type="com.cua.katsuhub.model.Character"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/backgroundColors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <ImageView
+                android:id="@+id/faceImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{character.getImageUrl()}"/>
+
+        <TextView
+                android:id="@+id/nameTextbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@{character.name}"
+                tools:text="Hohohihi"
+                android:textSize="36sp"
+                android:fontFamily="@font/neophobia"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="16dp"/>
+
+    </LinearLayout>
+
+</layout>
