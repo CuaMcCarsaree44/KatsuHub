@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.cua.katsuhub.R
 import com.cua.katsuhub.viewmodel.CharacterViewModel
+import kotlin.random.Random
 
 class MainMenu : AppCompatActivity(), View.OnClickListener {
 
@@ -16,11 +18,17 @@ class MainMenu : AppCompatActivity(), View.OnClickListener {
     private lateinit var search:Button
     private lateinit var disclaimer:Button
     private lateinit var searchText: TextView
+    private lateinit var photoBox:ImageView
     private var character:String = ""
+
+    private val photo:IntArray = intArrayOf(R.drawable.dancer, R.drawable.knight, R.drawable.samurai)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
+
+        photoBox = findViewById(R.id.backPhoto)
+        srand_photo()
 
         searchText = findViewById(R.id.searchTextbox)
         search = findViewById(R.id.searchButton)
@@ -29,6 +37,13 @@ class MainMenu : AppCompatActivity(), View.OnClickListener {
         disclaimer.setOnClickListener(this@MainMenu)
         search.setOnClickListener(this@MainMenu)
     }
+
+    private fun srand_photo()
+    {
+        val x:Int = Random.nextInt(0, photo.size)
+        photoBox.setImageResource(photo[x])
+    }
+
     override fun onClick(v: View?) {
         when(v?.id)
         {
