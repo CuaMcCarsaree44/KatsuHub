@@ -16,8 +16,10 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
     private lateinit var rViewTop:RecyclerView
     private lateinit var rViewMid:RecyclerView
     private lateinit var searchAnime:EditText
+
     @RequiresApi(Build.VERSION_CODES.O)
     private lateinit var calibri:Typeface
+
     @RequiresApi(Build.VERSION_CODES.O)
     private lateinit var default:Typeface
     
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
         calibri = resources.getFont(R.font.calibri)
         default = resources.getFont(R.font.neofobia_regular)
 
-        searchAnime = findViewById(R.id.searchAnime)
+        searchAnime = this.findViewById(R.id.searchAnime)
 
         searchAnime.clearFocus()
         searchAnime.onFocusChangeListener = this@MainActivity

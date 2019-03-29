@@ -6,9 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class Converter {
-    private val apiBody = "https://kitsu.io/api/edge/"
-
+class ApiConnection {
     private val loggingInterceptor: HttpLoggingInterceptor by lazy {
         HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -42,5 +40,9 @@ class Converter {
     fun getInstance(): ApiServices
     {
         return setInit().create(ApiServices::class.java)
+    }
+
+    companion object {
+        private const val apiBody = "https://kitsu.io/api/edge/"
     }
 }
