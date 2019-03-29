@@ -16,8 +16,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".view.SearchResult"
-                        android:theme="@style/App.NoActionBar">
+        <activity android:name=".view.MainSearch">
+        </activity>
+        <activity
+                android:name=".view.MainActivity"
+                android:theme="@style/App.NoActionBar">
+        </activity>
+        <activity
+                android:name=".view.SearchResult"
+                android:theme="@style/App.NoActionBar">
         </activity>
         <activity
                 android:name=".view.MainMenu"

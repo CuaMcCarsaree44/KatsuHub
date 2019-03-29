@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.cua.katsuhub.R
-import com.cua.katsuhub.viewmodel.CharacterViewModel
 import kotlin.random.Random
 
 class MainMenu : AppCompatActivity(), View.OnClickListener {
@@ -54,7 +53,7 @@ class MainMenu : AppCompatActivity(), View.OnClickListener {
                 startActivity(fly)
             }
             R.id.disclaimerButton -> {
-                var dial: AlertDialog.Builder = AlertDialog.Builder(this@MainMenu)
+                val dial: AlertDialog.Builder = AlertDialog.Builder(this@MainMenu)
                 dial.setMessage("""The developer knows nothing about anime so
                     | if there's something i need to fix from this app, include the anime anime picture things,
                     | you're welcome. Feel free to criticize :'). This project is for educational purpose only. \n\n

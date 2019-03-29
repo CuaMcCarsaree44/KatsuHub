@@ -14,7 +14,7 @@ class SplashScreen : AppCompatActivity() {
 
         val sleep = Handler()
         sleep.postDelayed({
-            startActivity(Intent(this@SplashScreen, MainMenu::class.java))
+            startActivity(Intent(this@SplashScreen, MainActivity::class.java))
             this@SplashScreen.finish()
         }, 2000)
     }
