@@ -30,4 +30,21 @@ class StringUtilities {
         }
         return returners
     }
+
+    fun convertToDouble(x:String):Double
+    {
+        return x.toDouble()
+    }
+
+    fun getDate(x:String):String
+    {
+        var date = ""
+        for(i in 0 until x.length)
+            date += if(x[i].isDigit()) {
+                x[i]
+            }else if(x[i].equals('-')) {
+                x[i]
+            }else break
+        return date
+    }
 }

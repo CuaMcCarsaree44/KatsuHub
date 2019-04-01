@@ -1,10 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <data>
+        <variable name="anime" type="com.cua.katsuhub.model.anime.Data" />
+        <import type="com.cua.katsuhub.utils.StringUtilities" />
+        <variable name="loadResources" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
+    </data>
+<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.DetailActivity">
+        tools:context=".view.DetailActivity"
+        android:background="@color/backgroundColors"
+>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="The Maximum Ammount is 38 Chars"
+                android:fontFamily="@font/adobeclean"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Synopsist"
+
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="220dp"
+
+                android:fontFamily="@font/neophobia"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+
+
+        />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/neophobia"
+                android:textColor="#FFFFFF"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="250dp"
+                android:layout_centerHorizontal="true"
+
+                tools:text="A shinigami, as a god of death, can kill any person—provided they see their victim's face and write their victim's name in a notebook called a Death Note. One day, Ryuk, bored by the shinigami lifestyle and interested in seeing how a human would use a Death Note, drops one into the human realm.\r\n\r\nHigh school student and prodigy Light Yagami stumbles upon the Death Note and—since he deplores the state of the world—tests the deadly notebook by writing a criminal's name in it. When the criminal dies immediately following his experiment with the Death Note, Light is greatly surprised and quickly recognizes how devastating the power that has fallen into his hands could be.\r\n\r\nWith this divine capability, Light decides to extinguish all criminals in order to build a new world where crime does not exist and people worship him as a god. Police, however, quickly discover that a serial killer is targeting criminals and, consequently, try to apprehend the culprit. To do this, the Japanese investigators count on the assistance of the best detective in the world: a young and eccentric man known only by the name of L.\r\n\r\n(Source: MAL Rewrite)"
+        />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/sample"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="25dp"
+        />
+
+        <TextView
+                android:id="@+id/ratingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rating"
+                android:fontFamily="@font/neophobia"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="175dp"
+        />
+
+        <ImageView
+                android:id="@+id/firstStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_black_24dp"
+
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="140dp"
+        />
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_black_24dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="110dp"
+        />
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_black_24dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="80dp"
+    />
+
+    <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_black_24dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+    />
+
+    <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_black_24dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+    />
+
+    <TextView
+            android:text="Age Rating"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="20sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="127.5dp"
+    />
+
+    <TextView
+            tools:text="R"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="16sp"
+
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="102.5dp"
+            android:layout_marginRight="15dp"
+            android:gravity="end"
+    />
+
+    <TextView
+            android:text="Episode Length"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="20sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="80.5dp"
+    />
+
+    <TextView
+            tools:text="24"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/adobeclean"
+            android:textSize="16sp"
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="140.5dp"
+            android:layout_marginRight="90dp"
+            android:gravity="end"
+    />
+
+    <TextView
+            android:text="minutes"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="16sp"
+
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="142.5dp"
+            android:layout_marginRight="15dp"
+            android:gravity="end"
+    />
+
+    <TextView
+            tools:text="Finished"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="16sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="182.5dp"
+            android:layout_marginRight="15dp"
+            android:gravity="end"
+    />
+
+    <TextView
+            android:text="Status"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="20sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="160dp"
+            android:layout_marginRight="172.5dp"
+    />
+
+</RelativeLayout>
+</layout>

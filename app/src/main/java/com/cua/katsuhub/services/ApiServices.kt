@@ -1,5 +1,6 @@
 package com.cua.katsuhub.services
 
+import com.cua.katsuhub.model.anime.AnimeRoot
 import com.cua.katsuhub.model.animes.Response
 import com.cua.katsuhub.model.response.CharacterResponse
 import retrofit2.Call
@@ -15,5 +16,5 @@ interface ApiServices {
     fun getTrending(): Call<Response>
 
     @GET("anime/{id}")
-    fun getSpecific(@Path("id") id: Int):Call<Response>
+    fun getSpecific(@Path("id") id: Int):Call<AnimeRoot>
 }
