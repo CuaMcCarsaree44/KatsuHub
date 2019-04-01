@@ -2,13 +2,15 @@ package com.cua.katsuhub.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.cua.katsuhub.model.animes.DataItem
 import com.cua.katsuhub.model.animes.Response
 import com.cua.katsuhub.services.ApiConnection
 import retrofit2.Call
 import retrofit2.Callback
 
-class AnimeViewModel {
-    val animes = MutableLiveData<List<Response>>()
+class AnimeViewModel : ViewModel(){
+    val animes = MutableLiveData<List<DataItem>>()
 
     private val api = ApiConnection().getInstance()
 
@@ -22,6 +24,9 @@ class AnimeViewModel {
                 if(response.isSuccessful)
                 {
                     Log.d("REQUEST", "Look at all of this. getTrending() is return 200")
+                    response.body()?.let{
+                        animes.postValue(it.data)
+                    }
                 }else
                 {
                     Log.d("REQUEST", "Hmmmm Not Found. Is your anime thing down or something?")

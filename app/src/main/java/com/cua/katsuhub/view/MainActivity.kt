@@ -7,15 +7,28 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cua.katsuhub.R
+import com.cua.katsuhub.adapter.TopFeaturedAdapter
+import com.cua.katsuhub.databinding.ActivityMainBinding
+import com.cua.katsuhub.viewmodel.AnimeViewModel
 
 class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
-    private lateinit var rViewTop:RecyclerView
-    private lateinit var rViewMid:RecyclerView
     private lateinit var searchAnime:EditText
+    private lateinit var bind: ActivityMainBinding
+
+    private val adapter by lazy{ TopFeaturedAdapter() }
+
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(AnimeViewModel::class.java)
+    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private lateinit var calibri:Typeface
@@ -26,10 +39,35 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        initBinding()
+        showAll()
         calibri = resources.getFont(R.font.calibri)
         default = resources.getFont(R.font.neofobia_regular)
 
+        searchUtils()
+    }
+
+    private fun showAll()
+    {
+        viewModel.getTrending()
+        viewModel.animes.observe(this, Observer{
+            adapter.loadList(it, this@MainActivity)
+        })
+    }
+
+    private fun initBinding()
+    {
+        bind = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        bind.apply {
+            loadFeatured = this@MainActivity.viewModel
+            featuredAnime.adapter = adapter
+            featuredAnime.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL,
+                false)
+        }
+    }
+
+    private fun searchUtils()
+    {
         searchAnime = this.findViewById(R.id.searchAnime)
 
         searchAnime.clearFocus()
