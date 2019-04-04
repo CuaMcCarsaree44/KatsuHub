@@ -21,5 +21,8 @@ data class Attributes(
 	val totalLength: Int? = 0,
 
 	@field:SerializedName("status")
-	val status: String? = ""
+	val status: String? = "",
+
+	@field:SerializedName("posterImage")
+	val posterImage:PosterImage = PosterImage()
 )

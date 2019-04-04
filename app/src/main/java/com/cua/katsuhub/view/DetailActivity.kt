@@ -47,7 +47,7 @@ class DetailActivity : AppCompatActivity() {
     {
         viewModel.getSpecific(id)
         viewModel.anime.observe(this, Observer {
-
+            bind.anime = it
         })
 
     }
