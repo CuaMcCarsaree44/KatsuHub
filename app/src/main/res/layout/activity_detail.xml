@@ -10,6 +10,10 @@
         <!-- <import type="com.cua.katsuhub.utils.BindingUtilities" /-->
         <variable name="loadResources" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
     </data>
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1"
+    >
 <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +25,7 @@
                 android:layout_height="wrap_content"
                 tools:text="The Maximum Ammount is 38 Chars"
                 android:text="@{anime.attributes.titles.en}"
-                android:fontFamily="@font/adobeclean"
+                android:fontFamily="@font/februari_normal"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:layout_alignParentTop="true"
@@ -38,7 +42,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="220dp"
-
+                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/neophobia"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -49,11 +53,14 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/adobeclean"
+                android:fontFamily="@font/februari_normal"
                 android:textColor="#FFFFFF"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="250dp"
-                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="@{anime.attributes.synopsis}"
                 tools:text="A shinigami, as a god of death, can kill any person—provided they see their victim's face and write their victim's name in a notebook called a Death Note. One day, Ryuk, bored by the shinigami lifestyle and interested in seeing how a human would use a Death Note, drops one into the human realm.\r\n\r\nHigh school student and prodigy Light Yagami stumbles upon the Death Note and—since he deplores the state of the world—tests the deadly notebook by writing a criminal's name in it. When the criminal dies immediately following his experiment with the Death Note, Light is greatly surprised and quickly recognizes how devastating the power that has fallen into his hands could be.\r\n\r\nWith this divine capability, Light decides to extinguish all criminals in order to build a new world where crime does not exist and people worship him as a god. Police, however, quickly discover that a serial killer is targeting criminals and, consequently, try to apprehend the culprit. To do this, the Japanese investigators count on the assistance of the best detective in the world: a young and eccentric man known only by the name of L.\r\n\r\n(Source: MAL Rewrite)"
         />
@@ -164,7 +171,7 @@
             tools:text="R"
             android:text="@{anime.attributes.ageRating}"
             android:textColor="#FFFFFF"
-            android:fontFamily="@font/neophobia"
+            android:fontFamily="@font/februari_normal"
             android:textSize="16sp"
 
             android:layout_width="210dp"
@@ -194,7 +201,7 @@
             android:text="@{anime.attributes.episodeLength.toString()}"
             tools:text="24"
             android:textColor="#FFFFFF"
-            android:fontFamily="@font/adobeclean"
+            android:fontFamily="@font/februari_normal"
             android:textSize="16sp"
 
             android:layout_width="50dp"
@@ -224,7 +231,7 @@
     <TextView
             tools:text="Finished"
             android:textColor="#FFFFFF"
-            android:fontFamily="@font/neophobia"
+            android:fontFamily="@font/februari_normal"
             android:textSize="16sp"
             android:text="@{anime.attributes.status}"
             android:layout_width="wrap_content"
@@ -251,4 +258,5 @@
     />
 
 </RelativeLayout>
+    </ScrollView>
 </layout>
