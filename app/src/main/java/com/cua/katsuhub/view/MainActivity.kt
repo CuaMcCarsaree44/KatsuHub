@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
     private lateinit var searchAnime:EditText
     private lateinit var bind: ActivityMainBinding
 
-    private val adapter by lazy{ TopFeaturedAdapter() }
+    private val adapter by lazy{ TopFeaturedAdapter(this@MainActivity) }
 
     private val viewModel by lazy {
         ViewModelProviders.of(this).get(AnimeViewModel::class.java)
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
     {
         viewModel.getTrending()
         viewModel.animes.observe(this, Observer{
-            adapter.loadList(it, this@MainActivity)
+            adapter.loadList(it)
         })
     }
 

@@ -5,19 +5,18 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.cua.katsuhub.databinding.TopFeaturedAnimeBinding
 import com.cua.katsuhub.model.animes.DataItem
 import com.cua.katsuhub.view.DetailActivity
 
-class TopFeaturedAdapter: RecyclerView.Adapter<TopFeaturedAdapter.Handler>() {
+class TopFeaturedAdapter constructor(c:Context): RecyclerView.Adapter<TopFeaturedAdapter.Handler>() {
     private var animes:List<DataItem> = emptyList()
-    private lateinit var context: Context
-    fun loadList(animeList: List<DataItem>, conteks: Context)
-    {
+    private val context:Context = c
+    fun loadList(animeList: List<DataItem>) {
         animes = animeList
-        this.context = conteks
         notifyDataSetChanged()
     }
 
@@ -38,8 +37,8 @@ class TopFeaturedAdapter: RecyclerView.Adapter<TopFeaturedAdapter.Handler>() {
         }
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra(DetailActivity.CURRENT_VIEW_PRIMARY_KEY, anim.id)
+           val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra(DetailActivity.CURRENT_VIEW_PRIMARY_KEY, anim.id.toInt())
             context.startActivity(intent)
         }
     }

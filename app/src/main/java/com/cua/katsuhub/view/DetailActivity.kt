@@ -1,7 +1,9 @@
 package com.cua.katsuhub.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -22,11 +24,6 @@ class DetailActivity : AppCompatActivity() {
         ViewModelProviders.of(this).get(AnimeViewModel::class.java)
     }
 
-    private val id by lazy{
-        intent.getIntExtra(CURRENT_VIEW_PRIMARY_KEY, 0)
-    }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +42,9 @@ class DetailActivity : AppCompatActivity() {
 
     private fun execute()
     {
+        val get: Intent = intent
+        val id:Int = get.getIntExtra(CURRENT_VIEW_PRIMARY_KEY, 0)
+        Toast.makeText(this@DetailActivity, id.toString(), Toast.LENGTH_LONG).show()
         viewModel.getSpecific(id)
         viewModel.anime.observe(this, Observer {
             bind.anime = it
