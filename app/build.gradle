@@ -52,4 +52,16 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+
+    //TODO 1.1 - Implements dependencies for Room
+    def room_version = "2.1.0-alpha06"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+}
+//TODO 1.0 - Implements Repositories with google()
+repositories{
+    google()
 }

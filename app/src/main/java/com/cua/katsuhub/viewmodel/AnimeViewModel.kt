@@ -59,4 +59,9 @@ class AnimeViewModel : ViewModel(){
 
         })
     }
+
+    fun getRecentViewed()
+    {
+
+    }
 }
