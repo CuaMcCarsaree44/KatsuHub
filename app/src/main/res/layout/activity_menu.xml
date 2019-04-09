@@ -29,6 +29,23 @@
           android:layout_marginTop="90dp"
     />
 
+    <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/menuViewPager"
+    >
+    </androidx.viewpager.widget.ViewPager>
 
+    <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabLayoutMenu"
+            android:background="@color/navBar"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="680dp"
+    >
+
+    </com.google.android.material.tabs.TabLayout>
 
 </RelativeLayout>

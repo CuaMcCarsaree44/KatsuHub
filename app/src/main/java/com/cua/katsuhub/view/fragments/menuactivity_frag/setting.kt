@@ -1,6 +1,7 @@
 package com.cua.katsuhub.view.fragments.menuactivity_frag
 
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -28,5 +29,8 @@ class Setting : Fragment() {
         return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 
-
+    interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        fun onFragmentInteraction(uri: Uri)
+    }
 }
