@@ -6,11 +6,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.dead_code.MenuActivity"
+        tools:context=".view.MenuActivity"
         android:background="@color/backgroundColors"
 >
     <TextView
-            android:text="Metro Design"
+            android:text="KATSU HUB"
             android:textSize="52sp"
             android:fontFamily="@font/neophobia"
             android:textColor="#FFFFFF"
@@ -227,6 +227,64 @@
             android:textColor="#FFFFFF"
     />
 
+    <View android:layout_width="match_parent"
+          android:layout_height="4dp"
+          android:background="#FFFFFF"
+          android:layout_alignParentTop="true"
+          android:layout_marginTop="680dp"
+    />
+
+    <ImageButton
+            android:layout_width="103dp"
+            android:layout_height="70dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="682.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:background="@drawable/navigation_bottom_bar_design"
+
+            android:src="@drawable/ic_home_black_24dp"
+    />
+
+    <ImageButton
+            android:layout_width="103dp"
+            android:layout_height="70dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="682.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="103dp"
+            android:background="@drawable/navigation_bottom_bar_design"
+
+            android:src="@drawable/ic_search_black_24dp"
+    />
+
+    <ImageButton
+            android:layout_width="103dp"
+            android:layout_height="70dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="682.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="206dp"
+            android:background="@drawable/navigation_bottom_bar_design"
+
+            android:src="@drawable/ic_person_black_24dp"
+    />
+
+    <ImageButton
+            android:layout_width="103dp"
+            android:layout_height="70dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="682.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="309dp"
+            android:background="@drawable/navigation_bottom_bar_design"
+
+            android:src="@drawable/ic_settings_black_24dp"
+    />
 
 
 </RelativeLayout>

@@ -53,4 +53,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
+    //TODO fifth-attempt #1 - Add Dependencies for Viewpager
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.3.1'
+
 }

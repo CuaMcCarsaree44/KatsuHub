@@ -5,4 +5,5 @@
     <color name="colorAccent">#1ab6d9</color>
     <color name="backgroundColors">#247fff</color>
     <color name="tilesColor">#3d8eff</color>
+    <color name="navBar">#003ea3</color>
 </resources>

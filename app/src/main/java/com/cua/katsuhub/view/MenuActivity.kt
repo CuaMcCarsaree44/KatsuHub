@@ -1,4 +1,4 @@
-package com.cua.katsuhub.view.dead_code
+package com.cua.katsuhub.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
