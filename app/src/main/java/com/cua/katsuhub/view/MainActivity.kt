@@ -1,22 +1,18 @@
 package com.cua.katsuhub.view
 
 import android.graphics.Typeface
-import android.opengl.Visibility
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.cua.katsuhub.R
 import com.cua.katsuhub.adapter.TopFeaturedAdapter
 import com.cua.katsuhub.databinding.ActivityMainBinding

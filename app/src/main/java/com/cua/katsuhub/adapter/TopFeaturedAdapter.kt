@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cua.katsuhub.databinding.TopFeaturedAnimeBinding
 import com.cua.katsuhub.model.animes.DataItem
 import com.cua.katsuhub.view.DetailActivity
+import com.cua.katsuhub.viewmodel.AnimeViewModel
 
 class TopFeaturedAdapter constructor(c:Context): RecyclerView.Adapter<TopFeaturedAdapter.Handler>() {
     protected var animes:List<DataItem> = emptyList()
@@ -37,6 +38,8 @@ class TopFeaturedAdapter constructor(c:Context): RecyclerView.Adapter<TopFeature
         }
 
         holder.itemView.setOnClickListener {
+          /*  lateinit var vm: AnimeViewModel
+            vm.insertRecent(anim.attributes.posterImage.tiny, anim.id.toInt())*/
            val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra(DetailActivity.CURRENT_VIEW_PRIMARY_KEY, anim.id.toInt())
             context.startActivity(intent)
