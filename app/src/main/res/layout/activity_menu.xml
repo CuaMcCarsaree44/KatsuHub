@@ -29,7 +29,7 @@
     />
 
     <Button
-            android:layout_width="100dp"
+            android:layout_width="130dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -37,6 +37,75 @@
             android:layout_marginLeft="20dp"
 
             android:background="@drawable/tiles_design"
+            android:text="Main Menu"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <Button
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="150.5dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="Search Character"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <Button
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="20dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="Search Anime"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <Button
+            android:layout_width="185dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="20dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="Recent Watched"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <Button
+            android:layout_width="185dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="205dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="My Favorite Anime"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
     />
 

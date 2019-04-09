@@ -6,6 +6,6 @@
         android:centerColor="@color/tilesColor"
         android:endColor="@color/tilesColor"
         />
-    <corners android:radius="3dp" />
+    <!--<corners android:radius="3dp" />-->
     <stroke android:width="5px" android:color="#FFFFFF" />
 </shape>
