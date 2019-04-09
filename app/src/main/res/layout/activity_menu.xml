@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Metro Main Menu Mode-->
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +10,7 @@
         android:background="@color/backgroundColors"
 >
     <TextView
-            android:text="KATSU HUB"
+            android:text="Metro Design"
             android:textSize="52sp"
             android:fontFamily="@font/neophobia"
             android:textColor="#FFFFFF"
@@ -83,7 +84,7 @@
 
             android:background="@drawable/tiles_design"
             android:text="Recent Watched"
-            android:textSize="18sp"
+            android:textSize="19sp"
             android:fontFamily="@font/februari_normal"
             android:textColor="#FFFFFF"
     />
@@ -103,10 +104,129 @@
             android:textColor="#FFFFFF"
     />
 
-    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+    <Button
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="20dp"
 
+            android:background="@drawable/tiles_design"
+            android:text="Feature 1"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
     />
+
+    <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="140dp"
+
+            android:background="@drawable/tiles_design"
+            android:src="@drawable/ic_settings_black_24dp"
+    />
+
+    <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="190dp"
+
+            android:background="@drawable/tiles_design"
+            android:src="@drawable/ic_share_black_24dp"
+    />
+
+    <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="140dp"
+
+            android:background="@drawable/tiles_design"
+            android:src="@drawable/ic_mood_black_24dp"
+    />
+
+    <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="190dp"
+
+            android:background="@drawable/tiles_design"
+            android:src="@drawable/ic_grade_black_24dp"
+    />
+
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="240dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="Feature 2"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="240dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="Feature 3"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <Button
+            android:layout_width="220dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="20dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="Feature 4"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+    <Button
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="600dp"
+            android:layout_marginLeft="20dp"
+
+            android:background="@drawable/tiles_design"
+            android:text="Feature 5"
+            android:textSize="18sp"
+            android:fontFamily="@font/februari_normal"
+            android:textColor="#FFFFFF"
+    />
+
+
 
 </RelativeLayout>
