@@ -28,7 +28,6 @@
           android:layout_alignParentTop="true"
           android:layout_marginTop="90dp"
     />
-
     <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
             android:layout_height="fill_parent"

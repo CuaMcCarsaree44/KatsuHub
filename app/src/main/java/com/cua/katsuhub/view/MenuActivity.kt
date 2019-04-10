@@ -40,11 +40,11 @@ Setting.OnFragmentInteractionListener, Search.OnFragmentInteractionListener {
         viewpage.setOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.setOnTabSelectedListener(object:TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                viewpage.currentItem = p0!!.position
             }
 
             override fun onTabUnselected(p0: TabLayout.Tab?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onTabSelected(p0: TabLayout.Tab?) {
