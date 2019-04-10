@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".view.fragments.menuactivity_frag.Setting">
-
-    <!-- TODO: Update blank fragment layout -->
+             tools:context=".view.fragments.menuactivity_frag.Setting"
+             android:background="@color/backgroundColors"
+>
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="THIS IS SETTING FRAGMENT"/>
+            android:text="SETTING"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="52sp"
 
-</FrameLayout>
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10sp"
+            android:layout_centerHorizontal="true"
+    />
+
+    <View
+            android:layout_marginTop="75dp"
+            android:layout_alignParentTop="true"
+            android:background="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"/>
+
+
+    <Switch
+            android:text="Incognito   "
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/neophobia"
+            android:textSize="30sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="200sp"
+            android:layout_centerHorizontal="true"
+    />
+</RelativeLayout>

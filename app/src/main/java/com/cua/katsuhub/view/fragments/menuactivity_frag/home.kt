@@ -11,6 +11,7 @@ import android.annotation.SuppressLint
 import android.net.Uri
 import android.widget.Button
 import android.widget.ImageButton
+import com.cua.katsuhub.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -42,6 +43,7 @@ class Home : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+       // val binding:FragmentHomeBinding =
     }
 
     interface OnFragmentInteractionListener {

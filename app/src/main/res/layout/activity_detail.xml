@@ -7,7 +7,7 @@
 >
     <data>
         <variable name="anime" type="com.cua.katsuhub.model.anime.Data" />
-        <!-- <import type="com.cua.katsuhub.utils.BindingUtilities" /-->
+       <!-- <variable name="BindingUtilities" type="com.cua.katsuhub.utils.BindingUtilities" /> -->
         <variable name="loadResources" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
     </data>
     <ScrollView android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_star_black_24dp"
-                android:visibility="@{BindingUtilities.rating_1(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+                android:visibility="@{() -> BindingUtilities.rating_1(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
 
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{BindingUtilities.rating_2(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{() -> BindingUtilities.rating_2(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
 
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -122,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{BindingUtilities.rating_3(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{() -> BindingUtilities.rating_3(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
 
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -135,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{BindingUtilities.rating_4(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{() -> BindingUtilities.rating_4(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"
@@ -147,7 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{BindingUtilities.rating_5(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{() -> BindingUtilities.rating_5(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"

@@ -36,37 +36,37 @@ class BindingUtilities {
         return x.toDouble()
     }
 
-    fun rating_1(x:Double):Boolean
+    fun rating_1(x:String):Boolean
     {
-        if(x > 20) return true
+        if(convertToDouble(x) >= 15) return true
 
         return false
     }
 
-    fun rating_2(x:Double):Boolean
+    fun rating_2(x:String):Boolean
     {
-        if(x > 40) return true
+        if(convertToDouble(x) >= 35) return true
 
         return false
     }
 
-    fun rating_3(x:Double):Boolean
+    fun rating_3(x:String):Boolean
     {
-        if(x > 60) return true
+        if(convertToDouble(x) > 60) return true
 
         return false
     }
 
-    fun rating_4(x:Double):Boolean
+    fun rating_4(x:String):Boolean
     {
-        if(x > 80) return true
+        if(convertToDouble(x) >= 78) return true
 
         return false
     }
 
-    fun rating_5(x:Double):Boolean
+    fun rating_5(x:String):Boolean
     {
-        if(x > 100) return true
+        if(convertToDouble(x) >= 90) return true
 
         return false
     }
