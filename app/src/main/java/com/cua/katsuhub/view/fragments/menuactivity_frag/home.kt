@@ -7,7 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.R
+import android.annotation.SuppressLint
 import android.net.Uri
+import android.widget.Button
+import android.widget.ImageButton
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,18 +24,24 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class Home : Fragment() {
+    private lateinit var mainMenu: Button
+    private lateinit var searchAnime: Button
+    private lateinit var searchCharacter: Button
+    private lateinit var settingTile: ImageButton
+    private lateinit var shareTile:ImageButton
+    private lateinit var incognitoTile:ImageButton
+    private lateinit var reviewTile:ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(com.cua.katsuhub.R.layout.fragment_home, container, false)
+    ): View?
+    {
+        val v:View = inflater.inflate(com.cua.katsuhub.R.layout.fragment_home, container, false)
+        return v
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 
     interface OnFragmentInteractionListener {

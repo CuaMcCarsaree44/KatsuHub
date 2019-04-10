@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".view.fragments.menuactivity_frag.Search">
+             tools:context=".view.fragments.menuactivity_frag.Search"
+             android:orientation="vertical"
+              android:background="@color/backgroundColors"
+>
+    <RelativeLayout
+            android:id="@+id/searchBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="THIS IS SEARCH FRAGMENT"/>
 
-</FrameLayout>
+            <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/search_icon"
+            />
+
+            <EditText
+                    android:id="@+id/searchEngine"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@id/searchIcon"
+
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/adobeclean"
+                    android:hint="Search Anime"
+
+            />
+
+    </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            
+        </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
