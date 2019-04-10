@@ -25,7 +25,7 @@
             android:background="#FFFFFF"
     />
     <ImageView
-            tools:src="@drawable/ic_person_black_24dp"
+            android:src="@drawable/ic_person_black_24dp"
             android:background="@drawable/tiles_design"
 
             android:layout_width="150dp"
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            tools:text="JinXPro Gambler"
+            android:text="JinXPro Gambler"
             android:textSize="24sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/februari_normal"
@@ -48,7 +48,7 @@
 
     <TextView
             android:fontFamily="@font/februari_normal"
-            tools:text="3531aec0"
+            android:text="3531aec0"
             android:textColor="#DDDDDD"
             android:textSize="18sp"
 
@@ -61,7 +61,7 @@
 
     <TextView
             android:fontFamily="@font/februari_normal"
-            tools:text="jinXprogamblers@example.com"
+            android:text="jinXprogamblers@example.com"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
 
@@ -74,7 +74,7 @@
 
     <TextView
             android:fontFamily="@font/februari_normal"
-            tools:text="\@jinXpro_gambler"
+            android:text="\@jinXpro_gambler"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
 
@@ -87,7 +87,7 @@
 
     <TextView
             android:fontFamily="@font/februari_normal"
-            tools:text="We shall never deny a guest even the most rudiculous request."
+            android:text="We shall never deny a guest even the most rudiculous request."
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textAlignment="center"
