@@ -36,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
     {
         bind = DataBindingUtil.setContentView(this@DetailActivity, R.layout.activity_detail)
         bind.apply{
-            loadResources = this@DetailActivity.viewModel
+            loadresources = this@DetailActivity.viewModel
         }
     }
 
@@ -44,7 +44,6 @@ class DetailActivity : AppCompatActivity() {
     {
         val get: Intent = intent
         val id:Int = get.getIntExtra(CURRENT_VIEW_PRIMARY_KEY, 0)
-        Toast.makeText(this@DetailActivity, id.toString(), Toast.LENGTH_LONG).show()
         viewModel.getSpecific(id)
         viewModel.anime.observe(this, Observer {
             bind.anime = it

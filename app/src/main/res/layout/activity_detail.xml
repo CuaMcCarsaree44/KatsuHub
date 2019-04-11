@@ -7,8 +7,7 @@
 >
     <data>
         <variable name="anime" type="com.cua.katsuhub.model.anime.Data" />
-       <!-- <variable name="BindingUtilities" type="com.cua.katsuhub.utils.BindingUtilities" /> -->
-        <variable name="loadResources" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
+        <variable name="loadresources" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
     </data>
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -91,13 +90,13 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="175dp"
         />
-<!--
+<!--FIXME : Still Error Occured on this Part-->
         <ImageView
                 android:id="@+id/firstStar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_star_black_24dp"
-                android:visibility="@{() -> BindingUtilities.rating_1(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+                android:visibility="@{anime.attributes.averageRating &gt;= 15 ? View.VISIBLE : View.INVISIBLE}"
 
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
@@ -110,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{() -> BindingUtilities.rating_2(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=30 ? View.VISIBLE : View.INVISIBLE}"
 
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -122,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{() -> BindingUtilities.rating_3(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=55 ? View.VISIBLE : View.INVISIBLE}"
 
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -135,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{() -> BindingUtilities.rating_4(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=75 ? View.VISIBLE : View.INVISIBLE}"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"
@@ -147,13 +146,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{() -> BindingUtilities.rating_5(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=90 ? View.VISIBLE : View.INVISIBLE}"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
     />
--->
+
     <TextView
             android:text="Age Rating"
             android:textColor="#FFFFFF"

@@ -111,7 +111,7 @@
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="520dp"
             android:layout_marginLeft="60dp"
     />
     <Button
@@ -124,7 +124,7 @@
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="520dp"
             android:layout_marginRight="60dp"
 
     />
@@ -136,7 +136,7 @@
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="570dp"
             android:layout_marginLeft="60dp"
     />
     <Button
@@ -149,7 +149,7 @@
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="570dp"
             android:layout_marginRight="60dp"
     />
 
@@ -160,7 +160,7 @@
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="650dp"
+            android:layout_marginTop="630dp"
             android:layout_marginLeft="60dp"
     />
     <Button
@@ -173,7 +173,7 @@
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="650dp"
+            android:layout_marginTop="630dp"
             android:layout_marginRight="60dp"
     />
 

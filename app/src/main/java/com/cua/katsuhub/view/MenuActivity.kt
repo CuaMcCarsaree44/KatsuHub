@@ -4,13 +4,13 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
-import com.cua.katsuhub.R
 import com.cua.katsuhub.adapter.fragment_adapter.MenuActivityFragmentAdapter
 import com.cua.katsuhub.view.fragments.menuactivity_frag.Home
 import com.cua.katsuhub.view.fragments.menuactivity_frag.Profile
 import com.cua.katsuhub.view.fragments.menuactivity_frag.Search
 import com.cua.katsuhub.view.fragments.menuactivity_frag.Setting
 import com.google.android.material.tabs.TabLayout
+import com.cua.katsuhub.R
 
 class MenuActivity : AppCompatActivity() , Home.OnFragmentInteractionListener, Profile.OnFragmentInteractionListener,
 Setting.OnFragmentInteractionListener, Search.OnFragmentInteractionListener {
