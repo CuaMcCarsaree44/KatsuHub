@@ -6,8 +6,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
 >
     <data>
+        <import type="android.view.View"/>
         <variable name="anime" type="com.cua.katsuhub.model.anime.Data" />
         <variable name="loadresources" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
+        <variable name="ratingsystem" type="com.cua.katsuhub.viewmodel.DetailActivityViewModel" />
     </data>
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -21,13 +23,14 @@
         android:background="@color/backgroundColors"
 >
         <TextView
+                android:id="@+id/animeTitle_Detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="The Maximum Ammount is 38 Chars"
-                android:text="@{anime.attributes.titles.en}"
+                android:text="@{anime.attributes.titles.jp}"
                 android:fontFamily="@font/februari_normal"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textSize="@{ratingsystem.stringCompress(anime.attributes.titles.jp)}"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="25dp"
@@ -96,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_star_black_24dp"
-                android:visibility="@{anime.attributes.averageRating &gt;= 15 ? View.VISIBLE : View.INVISIBLE}"
+                android:visibility="@{ratingsystem.rating1(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
 
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
@@ -109,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=30 ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{ratingsystem.rating2(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
 
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -121,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=55 ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{ratingsystem.rating3(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
 
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -134,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=75 ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{ratingsystem.rating4(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"
@@ -146,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_black_24dp"
-            android:visibility="@{anime.attributes.averageRating.toDouble() &gt;=90 ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{ratingsystem.rating5(anime.attributes.averageRating) ? View.VISIBLE : View.INVISIBLE}"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"

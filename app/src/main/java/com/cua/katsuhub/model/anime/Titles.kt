@@ -4,5 +4,8 @@ import com.google.gson.annotations.SerializedName
 data class Titles(
 
 	@field:SerializedName("en")
-	val en: String? = ""
+	val en: String? = "",
+
+	@field:SerializedName("en_jp")
+	val jp: String? = ""
 )

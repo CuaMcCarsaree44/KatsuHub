@@ -43,6 +43,7 @@ class AnimeViewModel: ViewModel(){
 
     fun getSpecific(x:Int)
     {
+
         api.getSpecific(x).enqueue(object:Callback<AnimeRoot>{
             override fun onFailure(call: Call<AnimeRoot>, t: Throwable) {
                 Log.d("REQUEST", "Failed to fetch data")

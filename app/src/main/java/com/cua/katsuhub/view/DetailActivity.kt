@@ -3,14 +3,13 @@ package com.cua.katsuhub.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.cua.katsuhub.R
 import com.cua.katsuhub.databinding.ActivityDetailBinding
 import com.cua.katsuhub.viewmodel.AnimeViewModel
-
+import com.cua.katsuhub.viewmodel.DetailActivityViewModel
 class DetailActivity : AppCompatActivity() {
     companion object {
         const val CURRENT_VIEW_PRIMARY_KEY:String = "DATA"
@@ -18,10 +17,12 @@ class DetailActivity : AppCompatActivity() {
 
     private lateinit var bind: ActivityDetailBinding
 
-
-
     private val viewModel by lazy{
         ViewModelProviders.of(this).get(AnimeViewModel::class.java)
+    }
+
+    private val viewDetailModel by lazy{
+        ViewModelProviders.of(this).get(DetailActivityViewModel::class.java)
     }
 
 
@@ -37,6 +38,7 @@ class DetailActivity : AppCompatActivity() {
         bind = DataBindingUtil.setContentView(this@DetailActivity, R.layout.activity_detail)
         bind.apply{
             loadresources = this@DetailActivity.viewModel
+            ratingsystem = this@DetailActivity.viewDetailModel
         }
     }
 
