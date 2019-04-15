@@ -86,10 +86,12 @@ class AnimeViewModel: ViewModel(){
                 {
                     Log.d("REQUEST", "Failed to fetch data")
                     Toast.makeText(c, "Error 500: Internal Server Error", Toast.LENGTH_LONG).show()
-                    (c as MainSearch).finish()
+                    if(c is MainSearch)
+                    {
+                        (c as Activity).finish()
+                    }
                 }
             }
         })
     }
-
 }
