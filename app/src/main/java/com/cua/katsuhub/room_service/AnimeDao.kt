@@ -1,5 +1,6 @@
 package com.cua.katsuhub.room_service
 
+import androidx.lifecycle.MutableLiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -16,8 +17,9 @@ interface AnimeDao {
     @Insert
     fun insert(anime: Anime)
 
+    //TODO 2.3 - Edit SELECT * into something that could be put in MutableLiveData<List<Anime>>()
     @Query("SELECT * FROM Anime ORDER BY created_at DESC")
-    fun getAllData()
+    fun getAllData():MutableLiveData<List<Anime>>
 
     @Query("DELETE FROM Anime")
     fun deleteAll()
