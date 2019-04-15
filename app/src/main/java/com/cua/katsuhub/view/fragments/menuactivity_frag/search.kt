@@ -38,7 +38,7 @@ class Search : Fragment() {
     }
 
     private val adapter by lazy{
-        context?.let { AnimeSearchListAdapter(it) } }
+        context?.let { AnimeSearchListAdapter(it) }
     }
 
     override fun onCreateView(
