@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:apps="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="animelist" type="com.cua.katsuhub.model.animes.DataItem" />
+        <variable name="viewmodel" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
+    </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
@@ -10,7 +15,7 @@
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            apps:imageUrl="@{animelist.attributes.posterImage.tiny}"
             tools:src="@drawable/sample"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
@@ -19,7 +24,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="160dp"
-
+                android:text="@{animelist.attributes.titles.jp}"
                 android:textSize="25sp"
                 android:textColor="#FFFFFF"
                 android:fontFamily="@font/februari_normal"
@@ -32,3 +37,4 @@
         />
     </RelativeLayout>
 </LinearLayout>
+</layout>

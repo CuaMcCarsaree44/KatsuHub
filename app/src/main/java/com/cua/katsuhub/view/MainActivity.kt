@@ -1,14 +1,13 @@
 package com.cua.katsuhub.view
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
-import android.widget.EditText
-import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -17,11 +16,11 @@ import com.cua.katsuhub.R
 import com.cua.katsuhub.adapter.TopFeaturedAdapter
 import com.cua.katsuhub.databinding.ActivityMainBinding
 import com.cua.katsuhub.viewmodel.AnimeViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
-    private lateinit var searchAnime:EditText
     private lateinit var bind: ActivityMainBinding
-
+    private lateinit var searchText:String
     private val adapter by lazy{ TopFeaturedAdapter(this@MainActivity) }
 
     private val viewModel by lazy {
@@ -66,19 +65,31 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
 
     private fun searchUtils()
     {
-        searchAnime = this.findViewById(R.id.searchAnime)
+        //searchAnime = this.findViewById(R.id.searchAnime)
+        searchText = searchAnime.text.toString()
+
         searchAnime.clearFocus()
         searchAnime.onFocusChangeListener = this@MainActivity
         searchAnime.setOnKeyListener { view: View, i: Int, keyEvent: KeyEvent ->
             if(keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER)
                 searchTrigger()
+
+            if(keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_BACK)
+                lostFocus()
             return@setOnKeyListener true
         }
     }
 
-    fun searchTrigger()
+    private fun lostFocus()
     {
-        Toast.makeText(this@MainActivity, "LAMBDA EXPRESSION EVERYBADEH!!!!", Toast.LENGTH_LONG).show()
+        searchAnime.clearFocus()
+    }
+
+    private fun searchTrigger()
+    {
+        val intent = Intent(this@MainActivity, MainSearch::class.java)
+        intent.putExtra(MainSearch.PRIMARY_KEY_TITLE, searchText)
+        startActivity(intent)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

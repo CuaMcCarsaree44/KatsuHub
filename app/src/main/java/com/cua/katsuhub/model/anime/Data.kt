@@ -10,5 +10,8 @@ data class Data(
 	val id: String = "",
 
 	@field:SerializedName("type")
-	val type: String? = ""
+	val type: String? = "",
+
+	@field:SerializedName("links")
+	val links:Links = Links()
 )

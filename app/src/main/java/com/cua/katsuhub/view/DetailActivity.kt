@@ -1,5 +1,5 @@
 package com.cua.katsuhub.view
-
+//FIXME - Jangan Lupa bikin Pointer buat ngesave Page yang udah di datengin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.cua.katsuhub.viewmodel.DetailActivityViewModel
 class DetailActivity : AppCompatActivity() {
     companion object {
         const val CURRENT_VIEW_PRIMARY_KEY:String = "DATA"
+        const val CURRENT_LINKS:String = "LINKS"
     }
 
     private lateinit var bind: ActivityDetailBinding
@@ -46,6 +47,7 @@ class DetailActivity : AppCompatActivity() {
     {
         val get: Intent = intent
         val id:Int = get.getIntExtra(CURRENT_VIEW_PRIMARY_KEY, 0)
+        val links:String = get.getStringExtra(CURRENT_LINKS)
         viewModel.getSpecific(id)
         viewModel.anime.observe(this, Observer {
             bind.anime = it

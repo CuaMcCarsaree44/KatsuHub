@@ -17,4 +17,7 @@ interface ApiServices {
 
     @GET("anime/{id}")
     fun getSpecific(@Path("id") id: Int):Call<AnimeRoot>
+
+    @GET("/library-entries")
+    fun getTitle(@Query("filter[title]") title: String): Call<Response>
 }
