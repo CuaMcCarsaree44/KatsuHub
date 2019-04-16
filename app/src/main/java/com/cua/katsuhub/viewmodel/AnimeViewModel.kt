@@ -82,7 +82,7 @@ class AnimeViewModel: ViewModel(){
                     response.body()?.let{
                         searchResult_ByTitle.postValue(it.data)
                     }
-                }else
+                }else if(!response.isSuccessful)
                 {
                     Log.d("REQUEST", "Failed to fetch data")
                     Toast.makeText(c, "Error 500: Internal Server Error", Toast.LENGTH_LONG).show()

@@ -8,12 +8,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.cua.katsuhub.R
 import com.cua.katsuhub.databinding.ActivityDetailBinding
+import com.cua.katsuhub.model.room_package.Anime
 import com.cua.katsuhub.viewmodel.AnimeViewModel
 import com.cua.katsuhub.viewmodel.DetailActivityViewModel
+import com.cua.katsuhub.viewmodel.HistoryViewModel
+
 class DetailActivity : AppCompatActivity() {
     companion object {
         const val CURRENT_VIEW_PRIMARY_KEY:String = "DATA"
-        const val CURRENT_LINKS:String = "LINKS"
     }
 
     private lateinit var bind: ActivityDetailBinding
@@ -34,12 +36,17 @@ class DetailActivity : AppCompatActivity() {
         execute()
     }
 
+    //TODO 3.0 - Saving Data. I save data from here
     private fun initBinding()
     {
+        val savedata:HistoryViewModel = HistoryViewModel(application)
+        lateinit var history:Anime
         bind = DataBindingUtil.setContentView(this@DetailActivity, R.layout.activity_detail)
         bind.apply{
             loadresources = this@DetailActivity.viewModel
             ratingsystem = this@DetailActivity.viewDetailModel
+            history = Anime(anime!!.links.self, anime!!.attributes.posterImage.tiny!!
+                , anime!!.attributes.titles!!.jp!!, (System.currentTimeMillis()/1000).toString())
         }
     }
 
@@ -47,7 +54,6 @@ class DetailActivity : AppCompatActivity() {
     {
         val get: Intent = intent
         val id:Int = get.getIntExtra(CURRENT_VIEW_PRIMARY_KEY, 0)
-        val links:String = get.getStringExtra(CURRENT_LINKS)
         viewModel.getSpecific(id)
         viewModel.anime.observe(this, Observer {
             bind.anime = it

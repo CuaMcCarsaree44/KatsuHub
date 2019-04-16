@@ -2,6 +2,7 @@ package com.cua.katsuhub.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.cua.katsuhub.model.room_package.Anime
 import com.cua.katsuhub.repository.HistoryRepository
@@ -24,7 +25,7 @@ class HistoryViewModel(app: Application) : AndroidViewModel(app) {
     private val repos:HistoryRepository
 
     //TODO 2.11 Define a variable to cache all datas
-    val allData: MutableLiveData<List<Anime>>
+    val allData: LiveData<List<Anime>>
 
     //TODO 2.12 Initialize Repository and Cache
     init{
