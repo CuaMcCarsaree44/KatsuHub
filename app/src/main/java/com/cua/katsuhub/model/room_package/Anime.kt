@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 
 //TODO 2.1 - Add Entity as Table
 @Entity(tableName = "Anime")
-class Anime {
+data class Anime (
     @ColumnInfo(name = "id") val url:String = "",
     @ColumnInfo(name = "image") val image:String = "",
     @ColumnInfo(name = "title") val title:String = "",
     @PrimaryKey @ColumnInfo(name = "created_at") val created_at: String = ""
-}
+)

@@ -40,13 +40,13 @@ class DetailActivity : AppCompatActivity() {
     private fun initBinding()
     {
         val savedata:HistoryViewModel = HistoryViewModel(application)
-        lateinit var history:Anime
+      //  lateinit var history:Anime
         bind = DataBindingUtil.setContentView(this@DetailActivity, R.layout.activity_detail)
         bind.apply{
             loadresources = this@DetailActivity.viewModel
             ratingsystem = this@DetailActivity.viewDetailModel
-            history = Anime(anime!!.links.self, anime!!.attributes.posterImage.tiny!!
-                , anime!!.attributes.titles!!.jp!!, (System.currentTimeMillis()/1000).toString())
+        //    history = Anime(anime!!.links.self, anime!!.attributes.posterImage.tiny!!
+               // , anime!!.attributes.titles!!.jp!!, (System.currentTimeMillis()/1000).toString())
         }
     }
 
