@@ -12,6 +12,7 @@ import com.cua.katsuhub.view.fragments.menuactivity_frag.Setting
 import com.google.android.material.tabs.TabLayout
 import com.cua.katsuhub.R
 
+@Suppress("DEPRECATION")
 class MenuActivity : AppCompatActivity() , Home.OnFragmentInteractionListener, Profile.OnFragmentInteractionListener,
 Setting.OnFragmentInteractionListener, Search.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {

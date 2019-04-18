@@ -97,10 +97,10 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
         when(v?.id)
         {
             R.id.searchAnime ->{
-                if(hasFocus === false)
+                if(!hasFocus)
                 {
                     searchAnime.typeface = default
-                }else if(hasFocus === true)
+                }else if(hasFocus)
                 {
                     searchAnime.typeface = calibri
                 }

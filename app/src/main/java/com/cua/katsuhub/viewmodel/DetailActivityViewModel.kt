@@ -1,6 +1,5 @@
 package com.cua.katsuhub.viewmodel
 
-import androidx.databinding.BindingAdapter
 import androidx.lifecycle.ViewModel
 
 class DetailActivityViewModel : ViewModel() {

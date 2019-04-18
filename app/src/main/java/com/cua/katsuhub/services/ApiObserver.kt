@@ -3,7 +3,7 @@ package com.cua.katsuhub.services
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-
+//TODO - RxJava 101 - 1.1
 abstract class ApiObserver<T> constructor(private val compositeDisponsible: CompositeDisposable): Observer<T> {
     override fun onComplete() {
 

@@ -24,7 +24,7 @@ class SearchResult : AppCompatActivity() {
     }
 
     companion object {
-        const val CHARACTER_PRIMARY_KEY:String = "Character"
+        const val CHARACTER_PRIMARY_KEY = "Character"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

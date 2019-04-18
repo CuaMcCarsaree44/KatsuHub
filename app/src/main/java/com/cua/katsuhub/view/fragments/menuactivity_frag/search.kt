@@ -21,15 +21,6 @@ import com.cua.katsuhub.databinding.FragmentSearchBinding
 import com.cua.katsuhub.viewmodel.AnimeViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class Search : Fragment() {
     private lateinit var binding:FragmentSearchBinding
     private lateinit var title:String
