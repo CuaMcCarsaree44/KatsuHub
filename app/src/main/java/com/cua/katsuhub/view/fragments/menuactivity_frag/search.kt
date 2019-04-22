@@ -67,7 +67,7 @@ class Search : Fragment() {
         if (nullable_context != null) {
             viewModel.getByTitle(title, nullable_context)
         }
-        viewModel.searchResult_ByTitle.observe(this, Observer{
+        viewModel.searchResult.observe(this, Observer{
             adapter!!.loadList(it)
         })
     }

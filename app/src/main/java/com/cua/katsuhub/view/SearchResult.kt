@@ -46,7 +46,7 @@ class SearchResult : AppCompatActivity() {
     {
         val search = intent.getStringExtra(CHARACTER_PRIMARY_KEY)
         viewModel.getCharacter(search)
-        viewModel.character.observe(this, Observer {
+        viewModel.characterList.observe(this, Observer {
             adapter.loadChars(it)
         })
     }

@@ -29,7 +29,7 @@ class ApiConnection {
             .build()
     }
 
-    fun create(): ApiServices{
+    fun getInstance(): ApiServices{
         val retrofitService = Retrofit.Builder()
             .baseUrl(apiBody)
             .addConverterFactory(GsonConverterFactory.create())

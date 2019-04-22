@@ -20,5 +20,5 @@ interface ApiServices {
     fun getSpecific(@Path("id") id: Int):Observable<AnimeRoot>
 
     @GET("/library-entries")
-    fun getTitle(@Query("filter[title]") title: String): Call<Response>
+    fun getTitle(@Query("filter[title]") title: String): Observable<Response>
 }
