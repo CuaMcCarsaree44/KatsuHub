@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity(), View.OnFocusChangeListener {
 
         searchAnime.clearFocus()
         searchAnime.onFocusChangeListener = this@MainActivity
-        searchAnime.setOnKeyListener { view: View, i: Int, keyEvent: KeyEvent ->
+        searchAnime.setOnKeyListener { _: View, i: Int, keyEvent: KeyEvent ->
             if(keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER)
                 searchTrigger()
 

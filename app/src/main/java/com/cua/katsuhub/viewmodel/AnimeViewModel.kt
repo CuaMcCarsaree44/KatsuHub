@@ -33,7 +33,7 @@ class AnimeViewModel: ViewModel(){
         })
     }
 
-    fun getByTitle(x:String, c:Context){
+    fun getByTitle(x:String){
         repos.getTitle(x, {
             searchResult.postValue(it.data)
         }, {

@@ -50,7 +50,7 @@ class MainSearch : AppCompatActivity() {
     private fun showAll()
     {
         title = intent.getStringExtra(PRIMARY_KEY_TITLE)
-        viewModel.getByTitle(title, this@MainSearch)
+        viewModel.getByTitle(title)
         viewModel.searchResult.observe(this, Observer{
             adapter.loadList(it)
         })
