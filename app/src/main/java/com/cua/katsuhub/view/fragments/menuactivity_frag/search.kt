@@ -65,7 +65,7 @@ class Search : Fragment() {
         val nullable_context: Context? = context
         title = searchEngine.text.toString()
         if (nullable_context != null) {
-            viewModel.getByTitle(title, nullable_context)
+            viewModel.getByTitle(title)
         }
         viewModel.searchResult.observe(this, Observer{
             adapter!!.loadList(it)

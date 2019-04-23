@@ -79,6 +79,9 @@ dependencies {
     implementation "android.arch.persistence.room:rxjava2:1.1.1"
     //TODO 1.1 - END Of Importing Room Libraries
 
+    //Testing Tools
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+
     //TODO Importing RxJava for Retrofit2 and RxJava it self
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
     implementation "io.reactivex.rxjava2:rxjava:2.2.5"

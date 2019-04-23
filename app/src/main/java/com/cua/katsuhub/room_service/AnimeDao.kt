@@ -6,11 +6,11 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.cua.katsuhub.model.room_package.Anime
+import io.reactivex.Maybe
 
 //TODO 2.2 - Create Dao
 @Dao
 interface AnimeDao {
-
     /*Incase you want append data upon inserting same IDs: @Insert(onConflict = onConflictStrategy.REPLACE)
     *By default, @Insert will be like -> @Insert(onConflict = onConflictStrategy.ABORT)
     *But, since we got out primary key depends on Unix Timestamp or current second since 01-01-1970 07:00:00.000 UTC
@@ -21,7 +21,7 @@ interface AnimeDao {
 
     //TODO 2.3 - Edit SELECT * into something that could be put in MutableLiveData<List<Anime>>()
     @Query("SELECT * FROM Anime ORDER BY created_at DESC")
-    fun getAllData(): LiveData<List<Anime>>
+    fun getAllData(): Maybe<List<Anime>>
 
     @Query("DELETE FROM Anime")
     fun deleteAll()
