@@ -93,7 +93,6 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="175dp"
         />
-<!--FIXME : Still Error Occured on this Part-->
         <ImageView
                 android:id="@+id/firstStar"
                 android:layout_width="wrap_content"

@@ -10,6 +10,7 @@ import com.cua.katsuhub.model.room_package.Anime
 //TODO 2.2 - Create Dao
 @Dao
 interface AnimeDao {
+
     /*Incase you want append data upon inserting same IDs: @Insert(onConflict = onConflictStrategy.REPLACE)
     *By default, @Insert will be like -> @Insert(onConflict = onConflictStrategy.ABORT)
     *But, since we got out primary key depends on Unix Timestamp or current second since 01-01-1970 07:00:00.000 UTC
