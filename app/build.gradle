@@ -57,7 +57,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
     //TODO fifth-attempt #1 - Add Dependencies for Viewpager
@@ -72,11 +72,9 @@ dependencies {
     //Livecycle Components
     implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
     kapt "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
-    //Coroutines
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+
     //RxJava Support
-    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+    implementation "android.arch.persistence.room:rxjava2:2.1.0"
     //TODO 1.1 - END Of Importing Room Libraries
 
     //Testing Tools

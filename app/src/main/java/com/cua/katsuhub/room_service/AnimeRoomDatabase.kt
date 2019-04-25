@@ -25,7 +25,7 @@ abstract class AnimeRoomDatabase : RoomDatabase() {
             synchronized(this){
                 //This is where you put Database Name.
                 val new_instance = Room.databaseBuilder(
-                    context.applicationContext,
+                    context,
                     AnimeRoomDatabase::class.java,
                     "Katsu_Database").build()
 
@@ -36,17 +36,14 @@ abstract class AnimeRoomDatabase : RoomDatabase() {
     }
 
 
-
+/*
     override fun createOpenHelper(config: DatabaseConfiguration?): SupportSQLiteOpenHelper {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun createInvalidationTracker(): InvalidationTracker {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun clearAllTables() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
+*/
 }
