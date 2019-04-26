@@ -27,7 +27,11 @@ class DetailActivity : AppCompatActivity() {
     private val viewDetailModel by lazy{
         ViewModelProviders.of(this).get(DetailActivityViewModel::class.java)
     }
-
+/*
+    private val  viewHistoryModel by lazy{
+        ViewModelProviders.of(this).get(HistoryViewModel::class.java)
+    }
+*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,14 +43,16 @@ class DetailActivity : AppCompatActivity() {
     //TODO 3.0 - Saving Data. I save data from here
     private fun initBinding()
     {
-        val savedata:HistoryViewModel = HistoryViewModel(application)
-      //  lateinit var history:Anime
+       // val savedata:HistoryViewModel = HistoryViewModel(application)
+        lateinit var history:Anime
         bind = DataBindingUtil.setContentView(this@DetailActivity, R.layout.activity_detail)
         bind.apply{
             loadresources = this@DetailActivity.viewModel
             ratingsystem = this@DetailActivity.viewDetailModel
-        //    history = Anime(anime!!.links.self, anime!!.attributes.posterImage.tiny!!
-               // , anime!!.attributes.titles!!.jp!!, (System.currentTimeMillis()/1000).toString())
+  //          savedata = this@DetailActivity.viewHistoryModel
+           // history = Anime(anime!!.links.self, anime!!.attributes.posterImage.tiny!!
+           //     , anime!!.attributes.titles!!.jp!!, (System.currentTimeMillis()/1000).toString())
+          //  savedata!!.insert(history)
         }
     }
 

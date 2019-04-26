@@ -10,6 +10,7 @@
         <variable name="anime" type="com.cua.katsuhub.model.anime.Data" />
         <variable name="loadresources" type="com.cua.katsuhub.viewmodel.AnimeViewModel" />
         <variable name="ratingsystem" type="com.cua.katsuhub.viewmodel.DetailActivityViewModel" />
+       <!-- <variable name="savedata" type="com.cua.katsuhub.viewmodel.HistoryViewModel"/> -->
     </data>
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="match_parent"

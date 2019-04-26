@@ -33,7 +33,7 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-//TODO 1.2 - Add Room Version Number
+//TODO 1.2 - Add Roomwn Version Number
 ext {
     roomVersion = '2.1.0'
     archLifecycleVersion = '1.1.1'
