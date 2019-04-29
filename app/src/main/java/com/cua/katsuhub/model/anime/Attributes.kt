@@ -12,7 +12,7 @@ data class Attributes(
 	val synopsis: String? = "",
 
 	@field:SerializedName("titles")
-	val titles: Titles? = Titles(),
+	val titles: Titles = Titles(),
 
 	@field:SerializedName("ageRating")
 	val ageRating: String? = "",

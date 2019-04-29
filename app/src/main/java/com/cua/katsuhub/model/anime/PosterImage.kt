@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 data class PosterImage(
 
 	@field:SerializedName("small")
-	val small: String? = "",
+	val small: String = "",
 
 	@field:SerializedName("original")
-	val original: String? = "",
+	val original: String = "",
 
 	@field:SerializedName("large")
-	val large: String? = "",
+	val large: String = "",
 
 	@field:SerializedName("tiny")
-	val tiny: String? = "",
+	val tiny: String = "",
 
 	@field:SerializedName("medium")
-	val medium: String? = ""
+	val medium: String = ""
 )

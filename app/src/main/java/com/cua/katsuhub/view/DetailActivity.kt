@@ -9,9 +9,16 @@ import androidx.lifecycle.ViewModelProviders
 import com.cua.katsuhub.R
 import com.cua.katsuhub.databinding.ActivityDetailBinding
 import com.cua.katsuhub.model.room_package.Anime
+import com.cua.katsuhub.repository.HistoryRepository
+import com.cua.katsuhub.room_service.AnimeDao
+import com.cua.katsuhub.services.AnimeRepository
 import com.cua.katsuhub.viewmodel.AnimeViewModel
 import com.cua.katsuhub.viewmodel.DetailActivityViewModel
 import com.cua.katsuhub.viewmodel.HistoryViewModel
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 
 class DetailActivity : AppCompatActivity() {
     companion object {
@@ -27,11 +34,6 @@ class DetailActivity : AppCompatActivity() {
     private val viewDetailModel by lazy{
         ViewModelProviders.of(this).get(DetailActivityViewModel::class.java)
     }
-/*
-    private val  viewHistoryModel by lazy{
-        ViewModelProviders.of(this).get(HistoryViewModel::class.java)
-    }
-*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,26 +45,31 @@ class DetailActivity : AppCompatActivity() {
     //TODO 3.0 - Saving Data. I save data from here
     private fun initBinding()
     {
-       // val savedata:HistoryViewModel = HistoryViewModel(application)
-        lateinit var history:Anime
+
         bind = DataBindingUtil.setContentView(this@DetailActivity, R.layout.activity_detail)
         bind.apply{
             loadresources = this@DetailActivity.viewModel
             ratingsystem = this@DetailActivity.viewDetailModel
-  //          savedata = this@DetailActivity.viewHistoryModel
-           // history = Anime(anime!!.links.self, anime!!.attributes.posterImage.tiny!!
-           //     , anime!!.attributes.titles!!.jp!!, (System.currentTimeMillis()/1000).toString())
-          //  savedata!!.insert(history)
+
         }
+    }
+
+    private fun insertToDB(history:Anime){
+        val repos: HistoryViewModel = HistoryViewModel(this@DetailActivity)
+        repos.insert(history)
     }
 
     private fun execute()
     {
+        lateinit var history: Anime
         val get: Intent = intent
         val id:Int = get.getIntExtra(CURRENT_VIEW_PRIMARY_KEY, 0)
         viewModel.getSpecific(id)
         viewModel.anime.observe(this, Observer {
             bind.anime = it
+            history = Anime(it!!.links.self, it!!.attributes.posterImage.tiny,
+                it!!.attributes.titles.jp, (System.currentTimeMillis()/1000).toString())
+            insertToDB(history)
         })
 
     }

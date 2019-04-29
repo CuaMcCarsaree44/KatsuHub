@@ -7,5 +7,5 @@ data class Titles(
 	val en: String? = "",
 
 	@field:SerializedName("en_jp")
-	val jp: String? = ""
+	val jp: String = ""
 )
