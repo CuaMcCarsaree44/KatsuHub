@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.cua.katsuhub.R
 import com.cua.katsuhub.adapter.HistoryAdapter
 import com.cua.katsuhub.databinding.ActivityHistoryBinding
+import com.cua.katsuhub.services.context
 import com.cua.katsuhub.viewmodel.HistoryViewModel
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -19,9 +20,7 @@ import io.reactivex.schedulers.Schedulers
 class HistoryActivity : AppCompatActivity() {
     private lateinit var binding:ActivityHistoryBinding
 
-    private val viewModel by lazy{
-        ViewModelProviders.of(this).get(HistoryViewModel::class.java)
-    }
+    private lateinit var viewModel:HistoryViewModel
 
     private val disposable = CompositeDisposable()
 
@@ -31,12 +30,15 @@ class HistoryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        context = this@HistoryActivity
         initialBinding()
         showAll()
     }
 
     @SuppressLint("WrongConstant")
     private fun initialBinding(){
+        viewModel = ViewModelProviders.of(this).get(HistoryViewModel::class.java)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_history)
         binding.apply{
             viewmodel = viewModel
@@ -47,7 +49,6 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private fun showAll(){
-        disposable.add(viewModel.getAllData(). subscribeOn(Schedulers.io())
         viewModel.histories.observe(this, Observer{
             adapter.loadHistory(it)
         })

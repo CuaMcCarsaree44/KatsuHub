@@ -2,12 +2,14 @@ package com.cua.katsuhub.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cua.katsuhub.databinding.HistoryPageBinding
 import com.cua.katsuhub.model.room_package.Anime
 import com.cua.katsuhub.view.DetailActivity
+import com.cua.katsuhub.viewmodel.HistoryViewModel
 
 class HistoryAdapter(c:Context): RecyclerView.Adapter<HistoryAdapter.Handler>() {
     private val context:Context = c
@@ -15,6 +17,7 @@ class HistoryAdapter(c:Context): RecyclerView.Adapter<HistoryAdapter.Handler>() 
 
     fun loadHistory(x:List<Anime>){
         histories = x
+        Log.d("Check X", "X is $x.size")
         notifyDataSetChanged()
     }
 
@@ -45,6 +48,7 @@ class HistoryAdapter(c:Context): RecyclerView.Adapter<HistoryAdapter.Handler>() 
         fun bind(history:Anime){
             itemBinding.apply{
                 itemBinding.sejarah = history
+                itemBinding.timecounter = HistoryViewModel()
                 executePendingBindings()
             }
         }

@@ -10,6 +10,7 @@ import com.cua.katsuhub.R
 import android.net.Uri
 import androidx.databinding.DataBindingUtil
 import com.cua.katsuhub.databinding.FragmentHomeBinding
+import com.cua.katsuhub.view.HistoryActivity
 import com.cua.katsuhub.view.MainActivity
 import com.cua.katsuhub.view.MainMenu
 
@@ -31,6 +32,7 @@ class Home : Fragment(), View.OnClickListener {
         binding.apply {
             mainMenuTile.setOnClickListener(this@Home)
             searchCharacterTile.setOnClickListener(this@Home)
+            historyTile.setOnClickListener(this@Home)
         }
     }
 
@@ -38,11 +40,15 @@ class Home : Fragment(), View.OnClickListener {
         when(v?.id)
         {
             R.id.mainMenuTile -> {
-                context!!.startActivity(Intent(context, MainActivity::class.java))
+                startActivity(Intent(activity, MainActivity::class.java))
             }
 
             R.id.searchCharacterTile ->{
-                context!!.startActivity(Intent(context, MainMenu::class.java))
+                startActivity(Intent(activity, MainMenu::class.java))
+            }
+
+            R.id.historyTile ->{
+                startActivity(Intent(activity, HistoryActivity::class.java))
             }
         }
     }

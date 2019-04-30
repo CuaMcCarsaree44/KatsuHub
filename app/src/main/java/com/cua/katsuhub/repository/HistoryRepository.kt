@@ -23,7 +23,7 @@ class HistoryRepository(private val dao:AnimeDao) {
 //FIXME Still Stuck in Here
     fun allData():Flowable<List<Anime>>{
         return dao.getAllData().map{
-            anime = it
+            it
         }
     }
 

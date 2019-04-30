@@ -12,6 +12,7 @@ import com.cua.katsuhub.model.room_package.Anime
 import com.cua.katsuhub.repository.HistoryRepository
 import com.cua.katsuhub.room_service.AnimeDao
 import com.cua.katsuhub.services.AnimeRepository
+import com.cua.katsuhub.services.context
 import com.cua.katsuhub.viewmodel.AnimeViewModel
 import com.cua.katsuhub.viewmodel.DetailActivityViewModel
 import com.cua.katsuhub.viewmodel.HistoryViewModel
@@ -55,7 +56,8 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun insertToDB(history:Anime){
-        val repos: HistoryViewModel = HistoryViewModel(this@DetailActivity)
+        context = this@DetailActivity
+        val repos: HistoryViewModel = HistoryViewModel()
         repos.insert(history)
     }
 
