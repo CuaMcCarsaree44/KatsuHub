@@ -67,8 +67,8 @@ class DetailActivity : AppCompatActivity() {
         viewModel.getSpecific(id)
         viewModel.anime.observe(this, Observer {
             bind.anime = it
-            history = Anime(it!!.links.self, it!!.attributes.posterImage.tiny,
-                it!!.attributes.titles.jp, (System.currentTimeMillis()/1000).toString())
+            history = Anime(it!!.id, it.attributes.posterImage.tiny,
+                it.attributes.titles.jp, (System.currentTimeMillis()/1000).toString())
             insertToDB(history)
         })
 

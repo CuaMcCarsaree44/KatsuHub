@@ -14,8 +14,8 @@ import com.cua.katsuhub.view.DetailActivity
 import com.cua.katsuhub.viewmodel.AnimeViewModel
 
 class TopFeaturedAdapter constructor(c:Context): RecyclerView.Adapter<TopFeaturedAdapter.Handler>() {
-    protected var animes:List<DataItem> = emptyList()
-    protected val context:Context = c
+    private var animes:List<DataItem> = emptyList()
+    private val context:Context = c
     fun loadList(animeList: List<DataItem>) {
         animes = animeList
         notifyDataSetChanged()
