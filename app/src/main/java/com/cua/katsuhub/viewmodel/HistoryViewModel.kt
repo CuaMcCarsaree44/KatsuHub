@@ -1,6 +1,7 @@
 package com.cua.katsuhub.viewmodel
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.cua.katsuhub.model.room_package.Anime
@@ -55,23 +56,25 @@ class HistoryViewModel: ViewModel() {
         val current:Long = System.currentTimeMillis()/1000
         val numb:Long = current - x.toLong()
         return when {
-            (numb / 31556926) > 0 -> "Year ago"
-            (numb / 2629743) > 0 -> "Month ago"
-            (numb / 86400) > 0 -> "Day ago"
-            (numb / 3600) > 0 -> "Hour ago"
-            (numb / 60) > 0 -> "Minute ago"
-            (numb) > 0 -> "Second ago"
+            (numb / 31556926) > 0 -> "Year"
+            (numb / 2629743) > 0 -> "Month"
+            (numb / 86400) > 0 -> "Day"
+            (numb / 3600) > 0 -> "Hour"
+            (numb / 60) > 0 -> "Minute"
+            (numb) > 0 -> "Second"
             else -> "Just Now"
         }
     }
 
     fun getAllData(){
-        lateinit var ex:List<Anime>
+        //var ex:ArrayList<Anime> = ArrayList()
         disponsible.add(repos.allData().subscribeOn(Schedulers.io()).
             observeOn(AndroidSchedulers.mainThread()).subscribe {
-            ex = it })
+            histories.postValue(it)
+            Log.d("SIZE IT", "${it.size}")
+        })
+        //Log.d("SIZE", "${ex.size}")
 
-        histories.postValue(ex)
     }
 
 }

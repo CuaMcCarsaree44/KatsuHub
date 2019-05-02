@@ -16,7 +16,7 @@ interface AnimeDao {
     *But, since we got out primary key depends on Unix Timestamp or current second since 01-01-1970 07:00:00.000 UTC
     *So... No Conflict will be happen :) Because Time change upon the time.
     */
-    @Insert (onConflict = OnConflictStrategy.ABORT)
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
     fun insert(anime: Anime): Completable
 
     //TODO 2.3 - Edit SELECT * into something that could be put in MutableLiveData<List<Anime>>()

@@ -18,10 +18,18 @@
         android:layout_height="wrap_content"
         android:background="@color/backgroundColors"
     >
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#FFFFFF"
+        />
+
         <ImageView
                 tools:src="@drawable/sample"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
                 app:imageUrl="@{sejarah.image}"
         />
 
@@ -30,11 +38,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="115dp"
+                android:layout_marginLeft="125dp"
                 android:layout_marginTop="50dp"
 
                 tools:text="Boku no Hero Academia 3"
-                android:textSize="25dp"
+                android:textSize="24dp"
                 android:textAlignment="center"
                 android:fontFamily="@font/adobeclean"
                 android:textColor="#FFFFFF"
@@ -46,8 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="115dp"
-                android:layout_marginRight="107dp"
+                android:layout_marginTop="110dp"
+                android:layout_marginRight="110dp"
 
                 tools:text="0"
                 android:text="@{timecounter.changeNumber(sejarah.created_at)}"
@@ -63,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="115dp"
+                android:layout_marginTop="110dp"
                 android:layout_marginRight="38dp"
 
 
@@ -80,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="115dp"
+                android:layout_marginTop="110dp"
                 android:layout_marginRight="5dp"
 
                 android:text="ago"
@@ -88,9 +96,17 @@
                 android:textAlignment="center"
                 android:fontFamily="@font/adobeclean"
                 android:textColor="#FFFFFF"
+
+        />
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#FFFFFF"
         />
 
     </RelativeLayout>
+
 
 </LinearLayout>
 </layout>

@@ -44,11 +44,12 @@ class HistoryActivity : AppCompatActivity() {
             viewmodel = viewModel
             historyRecyclerView.adapter = adapter
             historyRecyclerView.layoutManager = LinearLayoutManager(this@HistoryActivity,
-                LinearLayout.VERTICAL, true)
+                LinearLayout.VERTICAL, false)
         }
     }
 
     private fun showAll(){
+        viewModel.getAllData()
         viewModel.histories.observe(this, Observer{
             adapter.loadHistory(it)
         })

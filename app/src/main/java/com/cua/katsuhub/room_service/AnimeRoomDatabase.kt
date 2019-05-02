@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteOpenHelper
 import com.cua.katsuhub.model.room_package.Anime
-
+//Changed Version because i change the PrimaryKey
 //TODO 2.4 - Create a RoomDatabase by making it Abstract class and inherit RoomDatabase()
 @Database(entities = [Anime::class], version = 1) //-> This thing will create Table
 abstract class AnimeRoomDatabase : RoomDatabase() {
